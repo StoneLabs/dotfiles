@@ -1,7 +1,7 @@
 #!/bin/bash
 
-pm_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=primary mountain)
-fg_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=foreground mountain)
+pm_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=primary mountain 2>/dev/null)
+fg_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=foreground mountain 2>/dev/null)
 
 __print_bytes() {
     if [ "$1" -eq 0 ] || [ "$1" -lt 1024 ]; then

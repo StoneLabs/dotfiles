@@ -1,7 +1,7 @@
 #!/bin/sh
 
-pm_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=primary mountain)
-fg_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=foreground mountain)
+pm_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=primary mountain 2>/dev/null)
+fg_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=foreground mountain 2>/dev/null)
 
 
 if [ "$(pgrep openvpn)" ]; then

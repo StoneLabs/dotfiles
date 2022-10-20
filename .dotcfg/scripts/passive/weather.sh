@@ -1,9 +1,10 @@
 #!/bin/sh
 
-pm_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=primary mountain)
-fg_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=foreground mountain)
+pm_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=primary mountain 2>/dev/null)
+fg_color=$(polybar -c ~/.dotcfg/polybar/polybar.cfg --dump=foreground mountain 2>/dev/null)
 
-if nc -zw1 8.8.8.8 53 2>/dev/null; then
+wget -q --spider http://google.com
+if [ $? -eq 0 ]; then
 	get_icon() {
 		case $1 in
 		    01d) icon="";;
