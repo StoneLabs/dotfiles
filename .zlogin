@@ -39,12 +39,12 @@ echo
 echo Running Arch-Audit...
 ping -c 1 8.8.8.8 > /dev/null 2>&1
 while [ $? -ne 0 ]; do
-        sleep 1
-        ((c++)) && ((c==15)) && break
-        ping -c 1 8.8.8.8 > /dev/null 2>&1
+	sleep 1
+	((c++)) && ((c==15)) && break	
+	ping -c 1 8.8.8.8 > /dev/null 2>&1
 done
-
-arch-audit
+	
+arch-audit --color=always | tac
 
 echo
 
